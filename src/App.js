@@ -8,6 +8,7 @@ import UsePhone from "./features/phone/usePhone";
 import PublicLayout from "./layout/PublicLayout";
 import Signup from "./sign/signup";
 import Login from "./sign/login";
+import Logout from "./sign/logout";
 
 const Home = () => {
   window.location.href = "https://talkai247.online"
@@ -27,6 +28,7 @@ function App() {
           <Route path="/phone" element={<GetPhone />} />
           <Route path="/bound" element={<UsePhone />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="/" element={<Home/> } />
         </Routes>
       </div>
