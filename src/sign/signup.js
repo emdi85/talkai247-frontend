@@ -37,7 +37,7 @@ const Signup = () => {
         };
         try {
           const response = await axios.post(
-            "https://1e07-188-43-253-76.ngrok-free.app/api/user/register",
+            "http://localhost:8000/api/user/register",
             formData
           );
           toast.success("Registration successful");

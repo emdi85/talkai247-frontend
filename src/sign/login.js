@@ -24,7 +24,7 @@ const Login = () => {
       };
       try {
         const response = await axios.post(
-          "https://1e07-188-43-253-76.ngrok-free.app/api/user/login",
+          "http://localhost:8000/api/user/login",
           formData
         );
         localStorage.setItem("auth", response.data.token);
