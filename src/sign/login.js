@@ -9,9 +9,7 @@ import { toast } from "react-toastify";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [token, setToken] = useState(
-    JSON.parse(localStorage.getItem("auth")) || ""
-  );
+  const [token, setToken] = useState(localStorage.getItem("auth"));
   const navigate = useNavigate();
 
   const handleLoginSubmit = async (e) => {
@@ -29,9 +27,9 @@ const Login = () => {
           "https://bf45-188-43-253-77.ngrok-free.app/api/user/login",
           formData
         );
-        localStorage.setItem("auth", JSON.stringify(response.data.token));
+        localStorage.setItem("auth", response.data.token);
         toast.success("Login successfull");
-        navigate("/");
+        navigate("/assistant");
       } catch (err) {
         console.log(err);
         toast.error(err.message);
@@ -42,9 +40,9 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (token !== "") {
+    if (token !== null) {
       toast.success("You already logged in");
-      navigate("/");
+      navigate("/assistant");
     }
   }, []);
 

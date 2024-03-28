@@ -9,9 +9,6 @@ import { toast } from "react-toastify";
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-  const [token, setToken] = useState(
-    JSON.parse(localStorage.getItem("auth")) || ""
-  );
 
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
@@ -55,13 +52,6 @@ const Signup = () => {
       toast.error("Please fill all inputs");
     }
   };
-
-  useEffect(() => {
-    if (token !== "") {
-      toast.success("You already logged in");
-      navigate("/dashboard");
-    }
-  }, []);
 
   return (
     <div className="flex justify-center backdrop-blur-lg mt-[80px]">
