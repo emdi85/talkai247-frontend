@@ -12,7 +12,7 @@ export function fetchhandleCallOutBound(payload) {
                 customer: { number: payload['outboundPhoneNumber'] }
             })
         }
-        fetch('http://localhost:8000/api/v1/phone/call-outbound', options)
+        fetch('http://217.196.48.146:8000/api/v1/phone/call-outbound', options)
             .then(response => response.json())
             .then(response => resolve(response.data))
             .catch(err => console.error(err));
@@ -42,7 +42,7 @@ export function fetchSetAssistant(payload) {
                 phone: payload['Phone']
             })
         }
-        fetch('http://localhost:8000/api/v1/phone/in-bound', options)
+        fetch('http://217.196.48.146:8000/api/v1/phone/in-bound', options)
             .then(response => response.json())
             .then(response => resolve(response.data))
             .catch(err => console.error(err));
@@ -61,7 +61,7 @@ export function fetchGetPhone(payload) {
                 CN: payload['selectedCountry']
             })
         }
-        fetch('http://localhost:8000/api/v1/phone/get-phone', options)
+        fetch('http://217.196.48.146:8000/api/v1/phone/get-phone', options)
             .then(response => response.json())
             .then(response => resolve(response.data))
             .catch(err => console.error(err));
@@ -79,7 +79,7 @@ export function fetchBuyPhone(payload) {
                 Number: payload
             })
         }
-        fetch('http://localhost:8000/api/v1/phone/buy-phone', options)
+        fetch('http://217.196.48.146:8000/api/v1/phone/buy-phone', options)
             .then(response => response.json())
             .then(response => console.log(response))
             .then(response => resolve(response.data))
