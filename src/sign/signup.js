@@ -37,7 +37,7 @@ const Signup = () => {
         };
         try {
           const response = await axios.post(
-            "http://217.196.48.146:8000/api/user/register",
+            `${process.env.REACT_APP_SERVER_URL}/api/user/register`,
             formData
           );
           toast.success("Registration successful");

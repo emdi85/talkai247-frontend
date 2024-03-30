@@ -24,7 +24,7 @@ const Login = () => {
       };
       try {
         const response = await axios.post(
-          "http://217.196.48.146:8000/api/user/login",
+          `${process.env.REACT_APP_SERVER_URL}/api/user/login`,
           formData
         );
         localStorage.setItem("auth", response.data.token);

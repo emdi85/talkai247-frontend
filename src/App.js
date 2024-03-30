@@ -10,10 +10,10 @@ import Signup from "./sign/signup";
 import Login from "./sign/login";
 import Logout from "./sign/logout";
 
-const Home = () => {
-  window.location.href = "https://talkai247.online"
-  return <></>
-}
+// const Home = () => {
+//   window.location.href = "https://talkai247.online"
+//   return <></>
+// }
 
 function App() {
   const dispatch = useDispatch();
@@ -23,13 +23,13 @@ function App() {
       <PublicLayout />
       <div>
         <Routes>
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/" element={<Signup />} />
           <Route path="/assistant" element={<CreateAssistant />} />
           <Route path="/phone" element={<GetPhone />} />
           <Route path="/bound" element={<UsePhone />} />
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
-          <Route path="/" element={<Home/> } />
+          {/* <Route path="/" element={<Home/> } /> */}
         </Routes>
       </div>
     </>
